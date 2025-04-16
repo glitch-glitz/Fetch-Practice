@@ -1,29 +1,16 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+
 export function Table() {
   const [table, setTableData] = useState([]);
+
   useEffect(() => {
-    fetch("http://localhost:3000/table")
+    fetch("http://localhost:3000/table") // change to match your endpoint
       .then((res) => res.json())
       .then((data) => setTableData(data));
   }, []);
 
-  //     fetch("http://localhost:3000/", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     // body:JSON.stringify(tableData),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       // handlFetch()
-  //     });
-
-  console.log(table);
   return (
-    <div>
+    <div className="p-4">
       <table>
         <tbody>
           <tr>
